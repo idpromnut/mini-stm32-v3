@@ -1,0 +1,14 @@
+
+*.o
+
+cdctest/cdctest/Debug/bin/cdctest.elf
+
+cdctest/cdctest/Debug/bin/cdctest.bin
+
+cdctest/cdctest/Debug/bin/cdctest.hex
+
+cdctest/cdctest/Debug/bin/cdctest.map
+
+cdctest/cdctest/Debug/bin/history.xml
+
+cdctest/cdctest/Debug/obj/history.xml
