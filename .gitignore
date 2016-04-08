@@ -12,3 +12,4 @@ cdctest/cdctest/Debug/bin/cdctest.map
 cdctest/cdctest/Debug/bin/history.xml
 
 cdctest/cdctest/Debug/obj/history.xml
+*.log
