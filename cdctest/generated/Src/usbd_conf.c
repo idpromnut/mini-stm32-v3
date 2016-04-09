@@ -44,6 +44,7 @@
 PCD_HandleTypeDef hpcd_USB_FS;
 
 /* USER CODE BEGIN 0 */
+#include "usb_ctrl.h"
 /* USER CODE END 0 */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -492,12 +493,10 @@ void HAL_PCDEx_SetConnectionState(PCD_HandleTypeDef *hpcd, uint8_t state)
   if (state == 1)
   {
     /* Configure Low Connection State */
-	
   }
   else
   {
     /* Configure High Connection State */
-   
   } 
 /* USER CODE END 5 */
 }

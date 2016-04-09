@@ -176,23 +176,18 @@ static int8_t CDC_Control_FS  (uint8_t cmd, uint8_t* pbuf, uint16_t length)
   switch (cmd)
   {
   case CDC_SEND_ENCAPSULATED_COMMAND:
- 
     break;
 
   case CDC_GET_ENCAPSULATED_RESPONSE:
- 
     break;
 
   case CDC_SET_COMM_FEATURE:
- 
     break;
 
   case CDC_GET_COMM_FEATURE:
-
     break;
 
   case CDC_CLEAR_COMM_FEATURE:
-
     break;
 
   /*******************************************************************************/
@@ -213,22 +208,23 @@ static int8_t CDC_Control_FS  (uint8_t cmd, uint8_t* pbuf, uint16_t length)
   /* 6      | bDataBits  |   1   | Number Data bits (5, 6, 7, 8 or 16).          */
   /*******************************************************************************/
   case CDC_SET_LINE_CODING:   
-	
+//	  printf("usb_cdc_if: CDC_SET_LINE_CODING\n\r");
     break;
 
   case CDC_GET_LINE_CODING:     
-
+//	  printf("usb_cdc_if: CDC_GET_LINE_CODING\n\r");
     break;
 
   case CDC_SET_CONTROL_LINE_STATE:
-
+//	  printf("CDC_SET_CONTROL_LINE_STATE\n");
     break;
 
   case CDC_SEND_BREAK:
- 
+//	  printf("usb_cdc_if: CDC_SEND_BREAK\n");
     break;    
     
   default:
+//	  printf("usbd_cdc_if: %X\n\r", cmd);
     break;
   }
 

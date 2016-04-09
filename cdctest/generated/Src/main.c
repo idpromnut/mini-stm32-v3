@@ -35,6 +35,7 @@
 #include "usb_device.h"
 #include "usbd_cdc_if.h"
 #include "usb_ctrl.h"
+#include <stdio.h>
 
 /* USER CODE BEGIN Includes */
 
@@ -93,6 +94,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
   uint8_t HELLO_WORLD[13] = "Hello World!\n";
+
+  printf("%s", HELLO_WORLD);
 
   while (1)
   {
