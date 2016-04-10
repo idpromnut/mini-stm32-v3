@@ -109,7 +109,7 @@ LoopFillZerobss:
 /* Call the clock system intitialization function.*/
     bl  SystemInit
 /* Call static constructors */
-    bl __libc_init_array
+/*    bl __libc_init_array */
 /* Call the application's entry point.*/
   bl main
   bx lr
@@ -142,7 +142,7 @@ Infinite_Loop:
 
 g_pfnVectors:
 
-  .word _estack
+  .word _eram
   .word Reset_Handler
   .word NMI_Handler
   .word HardFault_Handler

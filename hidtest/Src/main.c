@@ -33,6 +33,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f1xx_hal.h"
 #include "usb_device.h"
+#include "usb_ctrl.h"
 
 /* USER CODE BEGIN Includes */
 
@@ -85,6 +86,9 @@ int main(void)
   MX_USB_DEVICE_Init();
 
   /* USER CODE BEGIN 2 */
+
+  USB_Control_Init();
+  USB_Control_Enable();
 
   /* USER CODE END 2 */
 

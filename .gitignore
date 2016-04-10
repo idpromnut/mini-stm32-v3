@@ -13,3 +13,7 @@ cdctest/cdctest/Debug/bin/history.xml
 
 cdctest/cdctest/Debug/obj/history.xml
 *.log
+hidtest/hidtest/Debug/bin/hidtest.map
+hidtest/hidtest/Debug/bin/hidtest.bin
+hidtest/hidtest/Debug/bin/hidtest.hex
+hidtest/hidtest/Debug/bin/hidtest.elf
