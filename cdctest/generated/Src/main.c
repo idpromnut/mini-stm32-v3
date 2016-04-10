@@ -35,14 +35,12 @@
 #include "usb_device.h"
 #include "usbd_cdc_if.h"
 #include "usb_ctrl.h"
+#include "uart.h"
 #include <stdio.h>
 
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
-
-/* Private variables ---------------------------------------------------------*/
-UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
@@ -52,7 +50,6 @@ UART_HandleTypeDef huart1;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_USART1_UART_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -80,20 +77,20 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART1_UART_Init();
-  MX_USB_DEVICE_Init();
+  UART_Init();
+//  MX_USB_DEVICE_Init();
 
   /* USER CODE BEGIN 2 */
 
-  USB_Control_Init();
-  USB_Control_Enable();
+//  USB_Control_Init();
+//  USB_Control_Enable();
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  uint8_t HELLO_WORLD[13] = "Hello World!\n";
+  uint8_t HELLO_WORLD[14] = "Hello World!\n";
 
   printf("%s", HELLO_WORLD);
 
@@ -138,7 +135,7 @@ void SystemClock_Config(void)
   PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_PLL_DIV1_5;
   HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit);
 
-  HAL_RCC_MCOConfig(RCC_MCO, RCC_MCO1SOURCE_PLLCLK, RCC_MCODIV_1);
+  HAL_RCC_MCOConfig(RCC_MCO, RCC_MCO1SOURCE_SYSCLK, RCC_MCO_DIV1);
 
   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
 
@@ -146,22 +143,6 @@ void SystemClock_Config(void)
 
   /* SysTick_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
-}
-
-/* USART1 init function */
-void MX_USART1_UART_Init(void)
-{
-
-  huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
-  huart1.Init.WordLength = UART_WORDLENGTH_8B;
-  huart1.Init.StopBits = UART_STOPBITS_1;
-  huart1.Init.Parity = UART_PARITY_NONE;
-  huart1.Init.Mode = UART_MODE_TX_RX;
-  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
-  HAL_UART_Init(&huart1);
-
 }
 
 /** Configure pins as 
