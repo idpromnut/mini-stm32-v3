@@ -58,12 +58,12 @@
   */ 
 #define USBD_VID     1155
 #define USBD_LANGID_STRING     1033
-#define USBD_MANUFACTURER_STRING     "STMicroelectronics"
+#define USBD_MANUFACTURER_STRING     	"Unrecoverable.org"
 #define USBD_PID_FS     22315
-#define USBD_PRODUCT_STRING_FS     "STM32 Human interface"
+#define USBD_PRODUCT_STRING_FS     		"IBM Model-M Keyboard (USB)"
 #define USBD_SERIALNUMBER_STRING_FS     "00000000001A"
-#define USBD_CONFIGURATION_STRING_FS     "HID Config"
-#define USBD_INTERFACE_STRING_FS     "HID Interface"
+#define USBD_CONFIGURATION_STRING_FS    "HID Config"
+#define USBD_INTERFACE_STRING_FS     	"HID Interface"
 
 /* USER CODE BEGIN 0 */
 
@@ -114,7 +114,7 @@ __ALIGN_BEGIN uint8_t USBD_FS_DeviceDesc[USB_LEN_DEV_DESC] __ALIGN_END =
     0x12,                       /*bLength */
     USB_DESC_TYPE_DEVICE,       /*bDescriptorType*/
     0x00,                       /* bcdUSB */  
-    0x02,
+    0x01,
     0x00,                       /*bDeviceClass*/
     0x00,                       /*bDeviceSubClass*/
     0x00,                       /*bDeviceProtocol*/

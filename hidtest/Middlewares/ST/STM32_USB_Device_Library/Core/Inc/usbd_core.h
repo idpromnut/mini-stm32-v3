@@ -42,7 +42,7 @@
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
   * @{
   */
-  
+
 /** @defgroup USBD_CORE
   * @brief This file is the Header file for usbd_core.c file
   * @{
@@ -61,7 +61,7 @@
 /** @defgroup USBD_CORE_Exported_TypesDefinitions
   * @{
   */
- 
+
 
 /**
   * @}

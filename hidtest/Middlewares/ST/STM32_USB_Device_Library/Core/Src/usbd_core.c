@@ -27,6 +27,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_core.h"
+#include "usb_ctrl.h"
 
 /** @addtogroup STM32_USBD_DEVICE_LIBRARY
 * @{
@@ -530,6 +531,7 @@ USBD_StatusTypeDef USBD_LL_IsoOUTIncomplete(USBD_HandleTypeDef  *pdev, uint8_t e
 */
 USBD_StatusTypeDef USBD_LL_DevConnected(USBD_HandleTypeDef  *pdev)
 {
+  USB_Device_Connected();
   return USBD_OK;
 }
 
@@ -544,6 +546,8 @@ USBD_StatusTypeDef USBD_LL_DevDisconnected(USBD_HandleTypeDef  *pdev)
   /* Free Class Resources */
   pdev->dev_state = USBD_STATE_DEFAULT;
   pdev->pClass->DeInit(pdev, pdev->dev_config);  
+
+  USB_Device_Disconnected();
    
   return USBD_OK;
 }
