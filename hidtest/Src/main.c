@@ -34,6 +34,7 @@
 #include "stm32f1xx_hal.h"
 #include "usb_device.h"
 #include "usb_ctrl.h"
+#include "user_interface.h"
 
 /* USER CODE BEGIN Includes */
 
@@ -87,6 +88,8 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
 
+  UserInterface_Init();
+
   USB_Control_Init();
   USB_Control_Enable();
 
@@ -97,7 +100,29 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-
+	  if(UserInterface_Is_Button_Pressed(KEY1))
+	  {
+		  UserInterface_Led_On(LED2);
+		  USB_Send_Key_Press('H', 0);
+		  USB_Send_Key_Press('e', 0);
+		  USB_Send_Key_Press('l', 0);
+		  USB_Send_Key_Press('\0', 0);
+		  USB_Send_Key_Press('l', 0);
+		  USB_Send_Key_Press('o', 0);
+		  USB_Send_Key_Press(' ', 0);
+		  USB_Send_Key_Press('W', 0);
+		  USB_Send_Key_Press('o', 0);
+		  USB_Send_Key_Press('r', 0);
+		  USB_Send_Key_Press('l', 0);
+		  USB_Send_Key_Press('d', 0);
+		  USB_Send_Key_Press('!', 0);
+		  USB_Send_Key_Press('\n', 0);
+		  USB_Send_All_Keys_Released();
+	  }
+	  else
+	  {
+		  UserInterface_Led_Off(LED2);
+	  }
   /* USER CODE BEGIN 3 */
 
   }
