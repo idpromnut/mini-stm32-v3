@@ -104,23 +104,34 @@ int main(void)
 	  {
 		  UserInterface_Led_On(LED2);
 		  USB_Send_Key_Press('H', 0);
+		  HAL_Delay(50);
 		  USB_Send_Key_Press('e', 0);
+		  HAL_Delay(50);
 		  USB_Send_Key_Press('l', 0);
-		  USB_Send_Key_Press('\0', 0);
-		  USB_Send_Key_Press('l', 0);
-		  USB_Send_Key_Press('o', 0);
-		  USB_Send_Key_Press(' ', 0);
-		  USB_Send_Key_Press('W', 0);
-		  USB_Send_Key_Press('o', 0);
-		  USB_Send_Key_Press('r', 0);
-		  USB_Send_Key_Press('l', 0);
-		  USB_Send_Key_Press('d', 0);
-		  USB_Send_Key_Press('!', 0);
-		  USB_Send_Key_Press('\n', 0);
+		  HAL_Delay(50);
 		  USB_Send_All_Keys_Released();
-	  }
-	  else
-	  {
+		  HAL_Delay(50);
+		  USB_Send_Key_Press('l', 0);
+		  HAL_Delay(50);
+		  USB_Send_Key_Press('o', 0);
+		  HAL_Delay(50);
+		  USB_Send_Key_Press(' ', 0);
+		  HAL_Delay(50);
+		  USB_Send_Key_Press('W', 0);
+		  HAL_Delay(50);
+		  USB_Send_Key_Press('o', 0);
+		  HAL_Delay(50);
+		  USB_Send_Key_Press('r', 0);
+		  HAL_Delay(50);
+		  USB_Send_Key_Press('l', 0);
+		  HAL_Delay(50);
+		  USB_Send_Key_Press('d', 0);
+		  HAL_Delay(50);
+		  USB_Send_Key_Press('!', 0);
+		  HAL_Delay(50);
+		  USB_Send_Key_Press('\n', 0);
+		  HAL_Delay(50);
+		  USB_Send_All_Keys_Released();
 		  UserInterface_Led_Off(LED2);
 	  }
   /* USER CODE BEGIN 3 */
