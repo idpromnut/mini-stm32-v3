@@ -94,11 +94,15 @@ int main(void)
 
   printf("%s", HELLO_WORLD);
 
+//  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_SET);
+
   while (1)
   {
   /* USER CODE END WHILE */
 	  HAL_Delay(1000);
-	  CDC_Transmit_FS(HELLO_WORLD, 13);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_2);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+//	  CDC_Transmit_FS(HELLO_WORLD, 13);
   /* USER CODE BEGIN 3 */
 
   }
@@ -169,6 +173,18 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+
+  /*Configure GPIO pin : PA2 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 }
 
 /* USER CODE BEGIN 4 */
